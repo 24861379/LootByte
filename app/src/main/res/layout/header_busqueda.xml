@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="191dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/ic_launcher_background">
+
+    <!-- Espacio status bar -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <Shape>
+        <corners
+            android:bottomLeftRadius="24dp"
+            android:bottomRightRadius="24dp"/>
+    </Shape>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:hint="@string/qu_estas_buscando"
+
+            android:background="@color/busqueda_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColorHint="@color/Texto_busqueda" />
+
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:icon="@drawable/heart_regular_full" />
+    </LinearLayout>
+
+</LinearLayout>
