@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="morado_nav">#4C1D95</color>
+    <color name="blanco">#F5F8FA</color>
+    <color name="nav_morado_activo">#8F29085C</color>
+    <color name="Texto_busqueda">#CFCBCB</color>
+    <color name="busqueda_background">#4C1D95</color>
 </resources>
