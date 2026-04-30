@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LookByte</string>
+    <string name="app_name">LootByte</string>
     <string name="inicio">Inicio</string>
     <string name="carrito">Carrito</string>
     <string name="ofertas">Ofertas</string>
@@ -10,4 +10,6 @@
     <string name="mouse">Mouse</string>
     <string name="teclados">Teclados</string>
     <string name="pantallas">Pantallas</string>
+    <string name="producto">Producto</string>
+    <string name="pedidos">Pedidos</string>
 </resources>

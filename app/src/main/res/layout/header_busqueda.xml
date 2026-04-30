@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="191dp"
+    android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/ic_launcher_background">
-
-    <!-- Espacio status bar -->
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
-    <Shape>
-        <corners
-            android:bottomLeftRadius="24dp"
-            android:bottomRightRadius="24dp"/>
-    </Shape>
-
-
-
+    app:shapeAppearanceOverlay="@style/HeaderShape"
+    app:cardBackgroundColor="@color/ic_launcher_background"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:orientation="vertical"
+        android:paddingTop="50dp">
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:hint="@string/qu_estas_buscando"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="0dp">
 
-            android:background="@color/busqueda_background"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:textColorHint="@color/Texto_busqueda" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:hint="@string/qu_estas_buscando"
+                android:background="@drawable/busqueda"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColorHint="@color/Texto_busqueda"
+                android:inputType="text"/>
 
 
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:icon="@drawable/heart_regular_full" />
+            <ImageView
+                android:id="@+id/btn_favoritos"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/heart_regular_full"/>
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_categorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="4dp"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="@color/white"
+            app:tabMode="scrollable"
+            app:tabGravity="start"
+            app:tabRippleColor="@null"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget" />
     </LinearLayout>
-
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
