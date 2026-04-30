@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".UI.MainMenu.Admin.AdminActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="@color/ic_launcher_background">-->
-<!--        </androidx.appcompat.widget.Toolbar>-->
+        <!--        <androidx.appcompat.widget.Toolbar-->
+        <!--            android:id="@+id/toolbar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="?attr/actionBarSize"-->
+        <!--            android:background="@color/ic_launcher_background">-->
+        <!--        </androidx.appcompat.widget.Toolbar>-->
 
 
         <!--Contenido-->
@@ -40,13 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/morado_nav"
-            app:menu="@menu/menu_bottom_nav_cliente"
+            app:menu="@menu/menu_bottom_nav_admin"
             app:itemIconTint="@color/blanco"
             app:itemTextColor="@color/blanco"
             app:labelVisibilityMode="labeled"
             app:itemBackground="@drawable/nav_item_background"
             app:itemActiveIndicatorStyle="@null"/>
     </LinearLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

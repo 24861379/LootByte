@@ -1,4 +1,4 @@
-package com.example.lookbyte
+package com.example.lootbyte
 
 import org.junit.Test
 

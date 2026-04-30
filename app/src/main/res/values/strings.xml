@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LookByte</string>
+    <string name="app_name">LootByte</string>
     <string name="inicio">Inicio</string>
     <string name="carrito">Carrito</string>
     <string name="ofertas">Ofertas</string>
@@ -12,4 +12,7 @@
     <string name="teclados">Teclados</string>
     <string name="pantallas">Pantallas</string>
     <string name="aud_fonos">Audífonos</string>
+    <string name="producto">Producto</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="pedidos">Pedidos</string>
 </resources>

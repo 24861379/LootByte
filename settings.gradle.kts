@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LookByte"
+rootProject.name = "LootByte"
 include(":app")
