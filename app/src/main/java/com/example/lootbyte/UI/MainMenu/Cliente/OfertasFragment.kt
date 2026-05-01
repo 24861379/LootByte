@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.lootbyte.R
+import com.google.android.material.tabs.TabLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +37,22 @@ class OfertasFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ofertas, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val tabLayout = requireActivity().findViewById<TabLayout>(R.id.tab_categorias)
+
+        tabLayout?.let {
+            if (it.tabCount == 0) {
+                it.addTab(it.newTab().setText("Todo"))
+                it.addTab(it.newTab().setText("Mouse"))
+                it.addTab(it.newTab().setText("Teclados"))
+                it.addTab(it.newTab().setText("Pantallas"))
+                it.addTab(it.newTab().setText("Audífonos"))
+            }
+        }
     }
 
     companion object {
