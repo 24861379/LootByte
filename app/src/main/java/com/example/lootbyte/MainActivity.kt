@@ -1,9 +1,10 @@
 package com.example.lootbyte
 
 import android.os.Bundle
+import android.widget.FrameLayout
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -33,23 +34,40 @@ class MainActivity : AppCompatActivity() {
         drawerLayout= findViewById(R.id.main)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
-        cargarFragment(HomeFragment())
+        cargarFragment(HomeFragment(), R.layout.header_busqueda)
         bottomNav.selectedItemId = R.id.nav_inicio
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_inicio -> cargarFragment(HomeFragment())
-                R.id.nav_carrito-> cargarFragment(CarritoFragment())
-                R.id.nav_ofertas -> cargarFragment(OfertasFragment())
-                R.id.nav_perfil -> cargarFragment(PerfilFragment())
+                R.id.nav_inicio -> cargarFragment(HomeFragment(), R.layout.header_busqueda)
+                R.id.nav_carrito-> cargarFragment(CarritoFragment(), R.layout.header_simple)
+                R.id.nav_ofertas -> cargarFragment(OfertasFragment(), R.layout.header_busqueda)
+                R.id.nav_perfil -> cargarFragment(PerfilFragment(), R.layout.header_simple)
             }
             true
         }
     }
 
-    private fun cargarFragment(fragment: Fragment) {
+    private fun cargarFragment(fragment: Fragment, headerRes: Int) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+        val headerContainer = findViewById<FrameLayout>(R.id.header_container)
+        headerContainer.removeAllViews()
+        layoutInflater.inflate(headerRes, headerContainer, true)
+
+        val btnBack = findViewById<ImageView>(R.id.btn_back)
+        btnBack?.setOnClickListener {
+            cargarFragment(HomeFragment(), R.layout.header_busqueda)
+            findViewById<BottomNavigationView>(R.id.bottom_nav)
+                .selectedItemId = R.id.nav_inicio
+//            parentFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container, HomeFragment())
+//                .commit()
+//
+//            requireActivity()
+//                .findViewById<BottomNavigationView>(R.id.bottom_nav)
+//                .selectedItemId = R.id.nav_inicio
+        }
     }
 }

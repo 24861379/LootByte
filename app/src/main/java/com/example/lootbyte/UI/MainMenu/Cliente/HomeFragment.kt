@@ -41,13 +41,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tabLayout = view.findViewById<TabLayout>(R.id.tab_categorias)
+        
+        // Buscamos en la Actividad porque el header está en el header_container de MainActivity
+        val tabLayout = requireActivity().findViewById<TabLayout>(R.id.tab_categorias)
 
-        tabLayout.addTab(tabLayout.newTab().setText("Todo"))
-        tabLayout.addTab(tabLayout.newTab().setText("Mouse"))
-        tabLayout.addTab(tabLayout.newTab().setText("Teclados"))
-        tabLayout.addTab(tabLayout.newTab().setText("Pantallas"))
-        tabLayout.addTab(tabLayout.newTab().setText("Audífonos"))
+        tabLayout?.let {
+            if (it.tabCount == 0) {
+                it.addTab(it.newTab().setText("Todo"))
+                it.addTab(it.newTab().setText("Mouse"))
+                it.addTab(it.newTab().setText("Teclados"))
+                it.addTab(it.newTab().setText("Pantallas"))
+                it.addTab(it.newTab().setText("Audífonos"))
+            }
+        }
     }
 
     companion object {
