@@ -15,4 +15,8 @@
     <string name="producto">Producto</string>
     <string name="usuarios">Usuarios</string>
     <string name="pedidos">Pedidos</string>
+    <string name="imagen_del_producto">Imagen del producto</string>
+    <string name="producto_s">Producto(s)</string>
+    <string name="continuar">Continuar</string>
+    <string name="todos_los_productos">Todos los productos</string>
 </resources>

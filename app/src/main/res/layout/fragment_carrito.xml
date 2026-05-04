@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:androdid="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.MainMenu.Cliente.CarritoFragment">
 
+    <CheckBox
+        android:id="@+id/cbTodosProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/todos_los_productos"
+        android:textSize="18sp" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <TextView
+<!--    resumen_carrito-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carrito"/>
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvCantidadProductos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/producto_s"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tvPrecioTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_ContinuarCompra"
+            android:backgroundTint="@color/ic_launcher_background"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/continuar"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+    </LinearLayout>
+    
 
 
 
-</FrameLayout>
+</LinearLayout>
