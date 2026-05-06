@@ -5,6 +5,7 @@ data class Producto(
     val nombre: String,
     val precio: Double,
     val imagen: Int,
+    val cantidad: Int,
     val descripcion: String,
     val detalles: List<String>,
     val review: List<String>,

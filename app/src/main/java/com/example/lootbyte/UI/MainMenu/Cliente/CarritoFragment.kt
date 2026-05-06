@@ -13,6 +13,7 @@ import com.example.lootbyte.Adapter.CarritoAdapter
 import com.example.lootbyte.R
 import com.example.lootbyte.Model.Producto
 import com.example.lootbyte.Model.ItemCarrito
+import com.example.lootbyte.UI.SeccionPagos.DatosDeEnvioFragment
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -27,6 +28,7 @@ class CarritoFragment : Fragment(R.layout.fragment_carrito) {
                 nombre = "Teclado gamer RGB blanco",
                 precio = 200000.0,
                 imagen = R.drawable.teclado_gamer_rgb_blanco,
+                cantidad = 1,
                 descripcion = "Lleva tu experiencia de juego al siguiente nivel con este teclado gamer RGB en color blanco, diseñado para quienes buscan rendimiento, estética y comodidad en un solo dispositivo.\n\nCuenta con teclas de alta respuesta que garantizan precisión y velocidad, ideales tanto para gaming competitivo como para uso diario. Su diseño ergonómico proporciona una experiencia cómoda incluso durante largas sesiones.",
                 detalles = listOf(
                     "Iluminación RGB con múltiples efectos",
@@ -50,6 +52,7 @@ class CarritoFragment : Fragment(R.layout.fragment_carrito) {
                 nombre = "Proyector Full HD",
                 precio = 400000.0,
                 imagen = R.drawable.proyector,
+                cantidad = 1,
                 descripcion = "Disfruta de una experiencia cinematográfica desde casa con este proyector Full HD de alta definición.\n\nIdeal para películas, videojuegos, presentaciones y contenido multimedia, ofrece imágenes nítidas, colores vibrantes y un rendimiento confiable en espacios interiores.",
                 detalles = listOf(
                     "Resolución Full HD 1080p",
@@ -89,6 +92,19 @@ class CarritoFragment : Fragment(R.layout.fragment_carrito) {
             listaItemsCarrito.forEach { it.seleccionado = isChecked }
             carritoAdapter.notifyDataSetChanged()
             actualizarResumen(view)
+        }
+//        Busca el botón y define la acción al hacer clic
+        view.findViewById<View>(R.id.btn_ContinuarCompra).setOnClickListener {
+            val total = calcularTotal()
+            val fragment = DatosDeEnvioFragment()
+            val bundle = Bundle()
+            bundle.putDouble("total_compra", total)
+            fragment.arguments = bundle
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, DatosDeEnvioFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
         return view
