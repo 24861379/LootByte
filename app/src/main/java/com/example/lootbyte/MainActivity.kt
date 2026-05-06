@@ -1,6 +1,8 @@
 package com.example.lootbyte
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.UI.MainMenu.Cliente.CarritoFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment
@@ -30,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-//        val toobal = findViewById<Toolbar>(R.id.toolbar)
         drawerLayout= findViewById(R.id.main)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
@@ -43,9 +45,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_carrito-> cargarFragment(CarritoFragment(), R.layout.header_simple)
                 R.id.nav_ofertas -> cargarFragment(OfertasFragment(), R.layout.header_busqueda)
                 R.id.nav_perfil -> cargarFragment(PerfilFragment(), R.layout.header_simple)
+
             }
             true
         }
+
+//        PRUEBAS
+//        val btnAdminTest = findViewById<Button>(R.id.btnAdminTest)
+//
+//        btnAdminTest.setOnClickListener {
+//            val intent = Intent(this, AdminActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun cargarFragment(fragment: Fragment, headerRes: Int) {
@@ -58,16 +69,13 @@ class MainActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageView>(R.id.btn_back)
         btnBack?.setOnClickListener {
-            cargarFragment(HomeFragment(), R.layout.header_busqueda)
-            findViewById<BottomNavigationView>(R.id.bottom_nav)
-                .selectedItemId = R.id.nav_inicio
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container, HomeFragment())
-//                .commit()
-//
-//            requireActivity()
-//                .findViewById<BottomNavigationView>(R.id.bottom_nav)
-//                .selectedItemId = R.id.nav_inicio
+            if (supportFragmentManager.backStackEntryCount > 0) {
+                supportFragmentManager.popBackStack()
+            } else {
+                cargarFragment(HomeFragment(), R.layout.header_busqueda)
+                findViewById<BottomNavigationView>(R.id.bottom_nav)
+                    .selectedItemId = R.id.nav_inicio
+            }
         }
     }
 }

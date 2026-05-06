@@ -2,7 +2,7 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.MainMenu.Admin.AdminActivity">
@@ -13,21 +13,13 @@
         android:orientation="vertical">
 
         <FrameLayout
-            android:id="@+id/header_container"
+            android:id="@+id/header_container_admin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <!--        <androidx.appcompat.widget.Toolbar-->
-        <!--            android:id="@+id/toolbar"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="?attr/actionBarSize"-->
-        <!--            android:background="@color/ic_launcher_background">-->
-        <!--        </androidx.appcompat.widget.Toolbar>-->
-
-
         <!--Contenido-->
         <FrameLayout
-            android:id="@+id/fragment_container"
+            android:id="@+id/fragment_container_admin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
