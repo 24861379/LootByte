@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/pedidos_admin"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MainMenu.Admin.PedidosFragment">
+    android:orientation="vertical"
+    android:background="#FFFFFF">
 
-    <androidx.core.widget.NestedScrollView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#8E24AA"
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"/>
-    </androidx.core.widget.NestedScrollView>
+            android:text="Gestionar pedidos"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
-</FrameLayout>
+    <!-- Lista de Pedidos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
+
+    <!-- Mensaje si no hay pedidos -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No tienes pedidos aún"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#666666"
+        android:visibility="gone"/>
+
+</LinearLayout>
