@@ -12,25 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LootByte">
 
-
         <activity
             android:name=".UI.MainMenu.Admin.AdminActivity"
             android:exported="false"
             android:theme="@style/Theme.LootByte" />
 
-
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
+        <activity
+            android:name=".UI.MainMenu.Admin.AdminProfileActivity"
+            android:exported="false" />
 
         <activity
-            android:name=".AdminProfileActivity" />
+            android:name=".MainActivity"
+            android:exported="false" />
 
     </application>
 

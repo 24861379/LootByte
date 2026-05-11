@@ -1,9 +1,10 @@
-package com.example.lootbyte
+package com.example.lootbyte.UI.MainMenu.Admin
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lootbyte.R
 
 class AdminProfileActivity : AppCompatActivity() {
 

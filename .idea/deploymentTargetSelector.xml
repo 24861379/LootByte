@@ -6,6 +6,13 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
+<<<<<<< HEAD
+=======
+      <SelectionState runConfigName="All Tests">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
+      </SelectionState>
+>>>>>>> 98e00761f1a123541cc337e1db9558910014357a
     </selectionStates>
   </component>
 </project>
