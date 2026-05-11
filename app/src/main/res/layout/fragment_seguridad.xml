@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_8e24aa"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seguridad"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Opciones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+        <!-- Cambiar Contraseña -->
+        <LinearLayout
+            android:id="@+id/cardCambiarContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_cambio_clave"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cambiar_contrase_a"
+                android:textSize="16sp"
+                android:paddingStart="16dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/black"/>
+        </LinearLayout>
+
+        <!-- Verificación de dos pasos -->
+        <LinearLayout
+            android:id="@+id/cardVerificacionDosPasos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_verificacion_dos"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/verificaci_n_de_dos_pasos"
+                android:textSize="16sp"
+                android:paddingStart="16dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/black"/>
+        </LinearLayout>
+
+        <!-- Alertas de seguridad -->
+        <LinearLayout
+            android:id="@+id/cardAlertasSeguridad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_alerta_seguridad"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/alertas_de_seguridad"
+                android:textSize="16sp"
+                android:paddingStart="16dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
