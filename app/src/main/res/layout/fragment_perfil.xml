@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <!-- Header Morado -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8E24AA"
+        android:background="@color/_8e24aa"
         android:padding="16dp"
         android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mi perfil"
-            android:textColor="#FFFFFF"
+            android:text="@string/mi_perfil"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -28,21 +28,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:background="#8E24AA">
+        android:background="@color/_8e24aa">
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@android:drawable/ic_menu_camera"
-            android:background="#FFFFFF"
+            android:background="@color/white"
             android:padding="8dp"
             android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuario Demo"
-            android:textColor="#FFFFFF"
+            android:text="@string/usuario_demo"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_gravity="center"
@@ -51,8 +51,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="usuariodemo@email.com"
-            android:textColor="#E0E0E0"
+            android:text="@string/usuariodemo_email_com"
+            android:textColor="@color/e0e0e0"
             android:textSize="14sp"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"/>
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Información personal"
+            android:text="@string/informaci_n_personal"
             android:padding="16dp"
             android:drawableStart="@android:drawable/ic_menu_edit"
             android:drawablePadding="16dp"
@@ -77,7 +77,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seguridad"
+            android:text="@string/seguridad"
             android:padding="16dp"
             android:drawableStart="@android:drawable/ic_lock_lock"
             android:drawablePadding="16dp"
@@ -87,7 +87,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Privacidad"
+            android:text="@string/privacidad"
             android:padding="16dp"
             android:drawableStart="@android:drawable/ic_menu_share"
             android:drawablePadding="16dp"

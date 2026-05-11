@@ -1,4 +1,4 @@
-package com.example.lootbyte.ui.auth
+package com.example.lootbyte.UI.Auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
-import com.example.lootbyte.ui.auth.RegisterFragment
 import com.example.lootbyte.databinding.FragmentLoginBinding
 import com.example.lootbyte.R
 import com.example.lootbyte.MainActivity

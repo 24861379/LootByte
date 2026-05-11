@@ -9,8 +9,8 @@
     <!-- LOGIN -->
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.lootbyte.ui.auth.LoginFragment"
-        android:label="Iniciar Sesión"
+        android:name="com.example.lootbyte.UI.Auth.LoginFragment"
+        android:label="@string/iniciar_sesi_n"
         tools:layout="@layout/fragment_login">
 
         <action
@@ -22,13 +22,11 @@
             app:destination="@id/homeFragment" />
     </fragment>
 
-    <!-- ... el resto de tus fragments ... -->
-
     <!-- ==================== REGISTRO ==================== -->
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.lootbyte.ui.auth.RegisterFragment"
-        android:label="Registro"
+        android:name="com.example.lootbyte.UI.Auth.RegisterFragment"
+        android:label="@string/registro"
         tools:layout="@layout/fragment_register">
 
         <!-- Nueva acción para ir al Home después de registrarse -->

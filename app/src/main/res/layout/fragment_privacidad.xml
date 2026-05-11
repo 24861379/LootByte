@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8E24AA"
+        android:background="@color/_8e24aa"
         android:padding="16dp"
         android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Privacidad"
-            android:textColor="#FFFFFF"
+            android:text="@string/privacidad"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -41,7 +41,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Configurar cookies"
+                android:text="@string/configurar_cookies"
                 android:textSize="16sp"
                 android:paddingStart="16dp"/>
             <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_flecha_derecha"/>
@@ -60,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cancelar cuenta"
+                android:text="@string/cancelar_cuenta"
                 android:textSize="16sp"
                 android:paddingStart="16dp"/>
             <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_flecha_derecha"/>

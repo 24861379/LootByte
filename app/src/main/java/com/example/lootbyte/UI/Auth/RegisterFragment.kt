@@ -1,4 +1,4 @@
-package com.example.lootbyte.ui.auth
+package com.example.lootbyte.UI.Auth
 
 import android.os.Bundle
 import android.view.LayoutInflater

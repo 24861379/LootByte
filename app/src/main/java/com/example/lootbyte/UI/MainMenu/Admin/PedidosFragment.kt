@@ -14,6 +14,18 @@ class PedidosFragment : Fragment() {
     private var _binding: FragmentPedidosBinding? = null
     private val binding get() = _binding!!
 
+    override fun onResume() {
+        super.onResume()
+        (activity as? AdminActivity)
+            ?.actualizarHeader(R.layout.header_simple)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8E24AA"
+        android:background="@color/_8e24aa"
         android:padding="24dp"
         android:orientation="vertical"
         android:gravity="center_horizontal">
@@ -18,31 +18,33 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:src="@android:drawable/ic_menu_camera"
-            android:background="#FFFFFF"
+            android:background="@color/white"
             android:padding="12dp"
             android:layout_marginBottom="12dp"/>
 
         <TextView
+            android:id="@+id/tvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuario Demo"
-            android:textColor="#FFFFFF"
+            android:text="@string/usuario_demo"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="usuariodemo@email.com"
-            android:textColor="#E0E0E0"
+            android:text="@string/usuariodemo_email_com"
+            android:textColor="@color/e0e0e0"
             android:textSize="14sp"
             android:layout_marginTop="4dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rol: Administrador"
-            android:textColor="#E0E0E0"
+            android:text="@string/rol_administrador"
+            android:textColor="@color/e0e0e0"
             android:textSize="14sp"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
@@ -60,51 +62,167 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Métricas del sistema"
+                android:text="@string/m_tricas_del_sistema"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:paddingBottom="16dp"/>
 
             <!-- Tarjetas -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total productos" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="248" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/total_productos" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvTotalProductos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_248" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clientes activos" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1,234" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/clientes_activos" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvClientesActivos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_1_234" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pedidos de hoy" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="87" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/pedidos_de_hoy" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvPedidosHoy" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_87" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ingresos Mensuales" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$45.2K" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/ingresos_mensuales"
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvIngresos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_45_2k" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tasa de conversión" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12.4%" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" android:background="@color/f5f5f5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/tasa_de_conversi_n" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvTasaConversion" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_12_4" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="#F5F5F5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="24dp">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Productos bajos de stock" android:textSize="14sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15" android:textSize="26sp" android:textStyle="bold"/>
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="24dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/productos_bajos_de_stock" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvProductosBajoStock" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_15" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -112,7 +230,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cerrar sesión"
+                android:text="@string/cerrar_sesi_n"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:paddingTop="16dp"
@@ -122,9 +240,9 @@
                 android:id="@+id/btnCerrarSesion"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="Cerrar sesión"
+                android:text="@string/cerrar_sesi_n"
                 android:backgroundTint="#D32F2F"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"/>
 

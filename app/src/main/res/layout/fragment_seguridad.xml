@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8E24AA"
+        android:background="@color/_8e24aa"
         android:padding="16dp"
         android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seguridad"
-            android:textColor="#FFFFFF"
+            android:text="@string/seguridad"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -44,21 +44,21 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_cambio_clave"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cambiar contraseña"
+                android:text="@string/cambiar_contrase_a"
                 android:textSize="16sp"
                 android:paddingStart="16dp"
-                android:textColor="#000000"/>
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
         </LinearLayout>
 
         <!-- Verificación de dos pasos -->
@@ -75,21 +75,21 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_verificacion_dos"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Verificación de dos pasos"
+                android:text="@string/verificaci_n_de_dos_pasos"
                 android:textSize="16sp"
                 android:paddingStart="16dp"
-                android:textColor="#000000"/>
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
         </LinearLayout>
 
         <!-- Alertas de seguridad -->
@@ -106,21 +106,21 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_alerta_seguridad"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Alertas de seguridad"
+                android:text="@string/alertas_de_seguridad"
                 android:textSize="16sp"
                 android:paddingStart="16dp"
-                android:textColor="#000000"/>
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                app:tint="#000000"/>
+                app:tint="@color/black"/>
         </LinearLayout>
 
     </LinearLayout>
