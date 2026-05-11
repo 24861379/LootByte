@@ -13,16 +13,7 @@
         android:theme="@style/Theme.LootByte">
 
         <activity
-            android:name=".UI.MainMenu.Admin.AdminActivity"
-            android:exported="false"
-            android:theme="@style/Theme.LootByte" />
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 740358feee0008da64be8432db2731aab18ae829
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +21,11 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
+        <activity
+            android:name=".UI.MainMenu.Admin.AdminActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LootByte" />
+
         <activity
             android:name=".UI.MainMenu.Admin.AdminProfileActivity"
             android:exported="false" />
@@ -38,11 +33,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-=======
-
-        <activity
-            android:name=".AdminProfileActivity" />
->>>>>>> 740358feee0008da64be8432db2731aab18ae829
 
     </application>
 
