@@ -10,92 +10,21 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <!-- Productos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ofertas"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="12dp"/>
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2">
 
-            <!-- PRODUCTO 1 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="#EEEEEE"
-                app:cardElevation="2dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="abrirProducto">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/producto_1"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hyperx_cloud_iii"
-                        android:textStyle="bold"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_349_900"
-                        android:textColor="#A855F7"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- PRODUCTO 2 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="#EEEEEE"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/producto_2"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/redragon_kumara_k552"
-                        android:textStyle="bold"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_189_900"
-                        android:textColor="#A855F7"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- PRODUCTO 3 -->
+            <!-- Oferta 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -112,27 +41,99 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="120dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/producto_3" />
+                        android:src="@drawable/producto_2"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/logitech_g_pro_x_superlight"
-                        android:textStyle="bold" />
+                        android:text="@string/_redragon_kumara_k552"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/_499_900"
+                        android:text="@string/_250_000_"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:paintFlags="strikeThruText"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_189_900_"
                         android:textColor="#A855F7"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_20_off"
+                        android:textColor="#FF0000"
+                        android:textStyle="bold"/>
+
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PRODUCTO 4 -->
+            <!-- Oferta 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#EEEEEE">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:contentDescription="@string/todo_"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/producto_6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jbl_quantum_100_"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_116_935"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:paintFlags="strikeThruText"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_179_900_"
+                        android:textColor="#A855F7"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_35_off"
+                        android:textColor="#FF0000"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Oferta 3 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -156,20 +157,37 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/razer_deathadder_v3"
+                        android:text="@string/razer_deathadder_v3_"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/_389_900"
+                        android:text="@string/_450_000"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:paintFlags="strikeThruText"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_389_900_"
                         android:textColor="#A855F7"
                         android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_15_off"
+                        android:textColor="#FF0000"
+                        android:textStyle="bold"/>
+
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PRODUCTO 5 -->
+            <!-- Oferta 4 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -193,54 +211,34 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/steelseries_apex_pro"
+                        android:text="@string/steelseries_apex_pro_"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/_699_900"
-                        android:textColor="#A855F7"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- PRODUCTO 6 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="#EEEEEE">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/producto_6"/>
+                        android:text="@string/_850_000"
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:paintFlags="strikeThruText"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/jbl_quantum_100"
-                        android:textStyle="bold"
-                        android:layout_marginTop="8dp"/>
+                        android:text="@string/_699_900_"
+                        android:textColor="#A855F7"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/_179_900"
-                        android:textColor="#A855F7"
+                        android:text="@string/_18_off"
+                        android:textColor="#FF0000"
                         android:textStyle="bold"/>
+
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
         </GridLayout>

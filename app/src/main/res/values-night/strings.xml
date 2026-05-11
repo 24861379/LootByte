@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LookByte</string>
     <string name="hyperx_cloud_iii">HyperX Cloud III</string>
     <string name="_349_900">$349.900</string>
     <string name="redragon_kumara_k552">Redragon Kumara K552</string>
@@ -20,7 +20,6 @@
     <string name="comprar_ahora">Comprar ahora</string>
     <string name="ofertas">Ofertas</string>
     <string name="_redragon_kumara_k552">Redragon Kumara K552</string>
-    <string name="_189_900_">$189.900</string>
     <string name="_20_off">20% OFF</string>
     <string name="jbl_quantum_100_">JBL Quantum 100</string>
     <string name="_179_900_">$179.900</string>
