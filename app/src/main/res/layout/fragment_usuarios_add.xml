@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".UI.MainMenu.Admin.UsuariosAddFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/user_regular_full"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_foto_usuario"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/ic_launcher_background"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/subir_foto_del_usuario"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_completo"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_Nombre_completo_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_el_nombre_completo"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPersonName"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rol"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_rol_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_el_nombre_completo"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_agregar_usuario"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/ic_launcher_background"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/agregar_usuario"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+
+</ScrollView>

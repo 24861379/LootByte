@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <ImageView
+            android:id="@+id/img_Producto"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/imagen_del_producto"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_Precio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/sp_Cantidad"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/d9d9d9"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_eliminar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/trash_can_regular_full" />
+        
+        
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
