@@ -1,5 +1,6 @@
 package com.example.lootbyte
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -14,6 +15,7 @@ import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.PerfilFragment
 import com.example.lootbyte.UI.Auth.LoginFragment
+import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +37,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         drawerLayout = binding.main
+
+        // BOTÓN DE PRUEBAS PARA ADMIN
+        binding.btnAdminTest.setOnClickListener {
+            val intent = Intent(this, AdminActivity::class.java)
+            startActivity(intent)
+        }
 
         // Configurar navegación
         binding.bottomNav.setOnItemSelectedListener { item ->
