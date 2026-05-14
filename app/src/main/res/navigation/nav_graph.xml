@@ -55,7 +55,29 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_productoFragment"
+            app:destination="@id/productoFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_ofertasFragment"
+            app:destination="@id/ofertasFragment" />
     </fragment>
+
+    <!-- ==================== PRODUCTO ==================== -->
+    <fragment
+        android:id="@+id/productoFragment"
+        android:name="com.example.lootbyte.UI.MainMenu.Cliente.ProductoFragment"
+        android:label="Producto"
+        tools:layout="@layout/fragment_producto" />
+
+    <!-- ==================== OFERTAS ==================== -->
+    <fragment
+        android:id="@+id/ofertasFragment"
+        android:name="com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment"
+        android:label="Ofertas"
+        tools:layout="@layout/fragment_ofertas" />
 
     <!-- ==================== SEGURIDAD ==================== -->
     <fragment

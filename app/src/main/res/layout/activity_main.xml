@@ -18,11 +18,12 @@
             android:layout_height="wrap_content"/>
 
         <!--PRUEBAS-->
-<!--        <Button-->
-<!--            android:id="@+id/btnAdminTest"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Admin Test"/>-->
+        <Button
+            android:id="@+id/btnAdminTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Test"
+            android:layout_gravity="center_horizontal"/>
 
 
         <!--Contenido-->
