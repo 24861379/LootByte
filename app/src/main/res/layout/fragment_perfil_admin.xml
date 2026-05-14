@@ -1,14 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MainMenu.Admin.PerfilAdminFragment">
+    android:orientation="vertical"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/_8e24aa"
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@android:drawable/ic_menu_camera"
+            android:background="@color/white"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usuario_demo"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usuariodemo_email_com"
+            android:textColor="@color/e0e0e0"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rol_administrador"
+            android:textColor="@color/e0e0e0"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/m_tricas_del_sistema"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="16dp"/>
+
+            <!-- Tarjetas -->
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/total_productos" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvTotalProductos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_248" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/clientes_activos" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvClientesActivos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_1_234" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/pedidos_de_hoy" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvPedidosHoy" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_87" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/ingresos_mensuales"
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvIngresos" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_45_2k" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" android:background="@color/f5f5f5" android:padding="16dp" android:gravity="center" android:layout_marginBottom="12dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/tasa_de_conversi_n" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvTasaConversion" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_12_4" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="match_parent" 
+                android:layout_height="130dp" 
+                android:background="@color/f5f5f5" 
+                android:padding="16dp" 
+                android:gravity="center" 
+                android:layout_marginBottom="24dp">
+                <LinearLayout 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:gravity="center">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/productos_bajos_de_stock" 
+                        android:textSize="14sp"/>
+                    <TextView 
+                        android:id="@+id/tvProductosBajoStock" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/_15" 
+                        android:textSize="26sp" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Cerrar sesión -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cerrar_sesi_n"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingStart="8dp"/>
+
+            <Button
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/cerrar_sesi_n"
+                android:backgroundTint="#D32F2F"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

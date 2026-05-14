@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment" >
+
+
+    <!-- LOGIN -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.lootbyte.UI.Auth.LoginFragment"
+        android:label="@string/iniciar_sesi_n"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- ==================== REGISTRO ==================== -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.lootbyte.UI.Auth.RegisterFragment"
+        android:label="@string/registro"
+        tools:layout="@layout/fragment_register">
+
+        <!-- Nueva acción para ir al Home después de registrarse -->
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- ==================== HOME ==================== -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Ir a Seguridad -->
+        <action
+            android:id="@+id/action_homeFragment_to_seguridadFragment"
+            app:destination="@id/seguridadFragment" />
+
+        <!-- Ir al Login (Cerrar Sesión) -->
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_productoFragment"
+            app:destination="@id/productoFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_ofertasFragment"
+            app:destination="@id/ofertasFragment" />
+    </fragment>
+
+    <!-- ==================== PRODUCTO ==================== -->
+    <fragment
+        android:id="@+id/productoFragment"
+        android:name="com.example.lootbyte.UI.MainMenu.Cliente.ProductoFragment"
+        android:label="Producto"
+        tools:layout="@layout/fragment_producto" />
+
+    <!-- ==================== OFERTAS ==================== -->
+    <fragment
+        android:id="@+id/ofertasFragment"
+        android:name="com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment"
+        android:label="Ofertas"
+        tools:layout="@layout/fragment_ofertas" />
+
+    <!-- ==================== SEGURIDAD ==================== -->
+    <fragment
+        android:id="@+id/seguridadFragment"
+        android:name="com.example.lootbyte.UI.Seguridad.SeguridadFragment"
+        android:label="Seguridad"
+        tools:layout="@layout/fragment_seguridad" />
+
+</navigation>
