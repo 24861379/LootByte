@@ -59,16 +59,111 @@
             android:textStyle="bold"
             android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/et_rol_usuario"
+        <Spinner
+            android:id="@+id/sp_rol_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/ingrese_el_nombre_completo"
             android:layout_marginTop="8dp"
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
             android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/correo"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_email_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_su_correo"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contrase_a"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_password_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_su_contrase_a"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celular"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_phone_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_su_celular"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/direcci_n"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_Address_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_su_direcci_n"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ciudad"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_city_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_su_ciudad"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_agregar_usuario"

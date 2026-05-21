@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-//    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -56,4 +56,7 @@ dependencies {
     implementation(libs.supabase.auth)
     implementation(libs.ktor.client.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coil)
+    implementation("io.github.jan-tennert.supabase:storage-kt")
+    implementation("at.favre.lib:bcrypt:0.10.2")
 }
