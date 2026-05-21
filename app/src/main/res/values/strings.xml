@@ -64,7 +64,7 @@
     <string name="precio">Precio</string>
     <string name="ingrese_el_c_digo_del_producto">Ingrese el código del producto</string>
     <string name="_precio">$ precio</string>
-    <string name="cantidad_disponible">Cantidad disponible</string>
+    <string name="cantidad_disponible">Cantidad disponible: </string>
     <string name="stock_del_producto">Stock del producto</string>
     <string name="colores_del_producto">Colores del producto</string>
     <string name="descripci_n_del_producto">Descripción del producto</string>
@@ -174,4 +174,7 @@
     <string name="andr_s_g">Andrés G.</string>
     <string name="agregar_al_carrito_">Agregar al carrito</string>
     <string name="comprar_ahora_">Comprar ahora</string>
+    <string name="categoria_del_producto">Categoria del producto</string>
+    <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
+    <string name="ingrese_su_celular">Ingrese su celular</string>
 </resources>
