@@ -49,7 +49,7 @@
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
-            android:inputType="numberDecimal"/>
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
-            android:inputType="number"/>
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
-            android:inputType="text"/>
+            android:inputType="numberDecimal"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
-            android:inputType="textPersonName"/>
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -116,16 +116,33 @@
             android:textStyle="bold"
             android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/et_colores_producto"
+        <Spinner
+            android:id="@+id/sp_colores_producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cantidad_disponible"
             android:layout_marginTop="8dp"
             android:padding="12dp"
             android:background="@drawable/style_edit_text"
             android:layout_marginBottom="20dp"
-            android:inputType="textPersonName"/>
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categoria_del_producto"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <Spinner
+            android:id="@+id/sp_categoria_producto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/style_edit_text"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"

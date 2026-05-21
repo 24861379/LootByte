@@ -5,10 +5,6 @@
         android:title="@string/editar" />
 
     <item
-        android:id="@+id/actualizar"
-        android:title="@string/actualizar" />
-
-    <item
         android:id="@+id/eliminar"
         android:title="@string/eliminar"/>
 </menu>
