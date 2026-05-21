@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:text="Cantidad disponible: "/>
+                    android:text="@string/cantidad_disponible"/>
 
                 <TextView
                     android:id="@+id/tv_cantidades_disponibles"
