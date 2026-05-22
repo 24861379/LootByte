@@ -8,10 +8,11 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.lootbyte.Model.Usuario
 import com.example.lootbyte.R
 
-public class UsuarioAdapter (private val usuarios: List<Usuario>) : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
+public class UsuarioAdapter (private val usuarios: List<Usuario>, private val onEliminar: (Usuario)-> Unit, private val onEditar: (Usuario)-> Unit) : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
     inner class UsuarioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imagenUsuario: ImageView = itemView.findViewById(R.id.img_usuario)
         val nombreUsuario: TextView = itemView.findViewById(R.id.tv_Nombre_usuario)
@@ -29,9 +30,9 @@ public class UsuarioAdapter (private val usuarios: List<Usuario>) : RecyclerView
 
     override fun onBindViewHolder(holder: UsuarioViewHolder, position: Int) {
         val usuario = usuarios[position]
-        holder.imagenUsuario.setImageResource(usuario.imagen)
-        holder.nombreUsuario.text = usuario.nombre
-        holder.rolUsuario.text = usuario.rol
+        holder.imagenUsuario.load(usuario.foto_perfil)
+        holder.nombreUsuario.text = usuario.nombre_completo
+        holder.rolUsuario.text = usuario.rol?.nombre_rol?:"Sin rol"
 
         holder.btn_CRUD.setOnClickListener { view ->
             val popup = PopupMenu(view.context, view)
@@ -44,9 +45,14 @@ public class UsuarioAdapter (private val usuarios: List<Usuario>) : RecyclerView
 
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.editar -> true
-                    R.id.actualizar -> true
-                    R.id.eliminar -> true
+                    R.id.editar -> {
+                        onEditar(usuario)
+                        true
+                    }
+                    R.id.eliminar -> {
+                        onEliminar(usuario)
+                        true
+                    }
                     else -> false
                 }
 

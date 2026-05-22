@@ -12,8 +12,9 @@ import com.example.lootbyte.Model.Producto
 import com.example.lootbyte.R
 import java.text.NumberFormat
 import java.util.Locale
+import coil.load
 
-class productoAdminAdapter (private val listaProductos: List<Producto>, private val onCambio: ()-> Unit) : RecyclerView.Adapter<productoAdminAdapter.ProductoViewHolder>() {
+class productoAdminAdapter (private var listaProductos: List<Producto>, private val onElimanar: (Producto)-> Unit, private val onEditar: (Producto)-> Unit) : RecyclerView.Adapter<productoAdminAdapter.ProductoViewHolder>() {
 
     private val formatCOP = NumberFormat.getCurrencyInstance(Locale("es", "CO"))
     inner class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,10 +34,16 @@ class productoAdminAdapter (private val listaProductos: List<Producto>, private 
 
     override fun onBindViewHolder(holder: ProductoViewHolder, position: Int) {
         val producto = listaProductos[position]
-        holder.producto.setImageResource(producto.imagen)
-        holder.nombre.text = producto.nombre
-        holder.precio.text = "${formatCOP.format(producto.precio)}"
-        holder.cantidad.text = producto.cantidad.toString()
+        
+        holder.producto.load(producto.foto_producto) {
+            crossfade(true)
+            placeholder(R.drawable.image_regular_full)
+            error(R.drawable.triangle_exclamation_solid_full)
+        }
+
+        holder.nombre.text = producto.nombre_producto
+        holder.precio.text = "${formatCOP.format(producto.producto_Color?.firstOrNull()?.precio ?:0.0)}"
+        holder.cantidad.text = producto.stockTotal.toString()
         holder.btnCRUD.setOnClickListener { view ->
             val popup = PopupMenu(view.context, view)
             popup.menuInflater.inflate(R.menu.popup_menu_crud, popup.menu)
@@ -48,9 +55,15 @@ class productoAdminAdapter (private val listaProductos: List<Producto>, private 
 
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.editar -> true
-                    R.id.actualizar -> true
-                    R.id.eliminar -> true
+                    R.id.editar -> {
+
+                        onEditar(producto)
+                        true
+                    }
+                    R.id.eliminar -> {
+                        onElimanar(producto)
+                        true
+                    }
                     else -> false
                 }
 
@@ -58,6 +71,11 @@ class productoAdminAdapter (private val listaProductos: List<Producto>, private 
             popup.show()
         }
 
+    }
+
+    fun actualizarProductos(nuevaLista: List<Producto>, onCambioNueva: () -> Unit = {}) {
+        listaProductos = nuevaLista
+        notifyDataSetChanged()
     }
 
 }
