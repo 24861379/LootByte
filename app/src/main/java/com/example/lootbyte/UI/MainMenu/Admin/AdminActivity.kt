@@ -39,7 +39,10 @@ class AdminActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_producto -> cargarFragment(ProductosFragment())
                 R.id.nav_usuarios -> cargarFragment(UsuariosFragment())
-                R.id.nav_pedidos -> cargarFragment(PedidosFragment())
+                R.id.nav_pedidos -> {
+                    findViewById<FrameLayout>(R.id.header_container_admin).removeAllViews()
+                    cargarFragment(PedidosFragment())
+                }
                 R.id.nav_perfil -> cargarFragment(PerfilAdminFragment())
             }
             true

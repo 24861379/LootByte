@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
+import android.widget.ImageView
 
 class PerfilAdminFragment : Fragment() {
 
@@ -25,6 +26,11 @@ class PerfilAdminFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val btnBack = view.findViewById<ImageView>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
 
         // ==================== DATOS DEL PERFIL ====================
         view.findViewById<TextView>(R.id.tvNombre)?.text = "Usuario Demo"

@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/pedidos_admin"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".UI.MainMenu.Admin.PedidosFragment">
+    app:cardBackgroundColor="@color/morado_nav">
 
-    <!-- Header -->
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/_8e24aa"
-        android:padding="16dp"
-        android:gravity="center_vertical">
+        android:layout_height="80dp"
+        app:cardBackgroundColor="@color/a020f0"
+        app:cardElevation="0dp"
+        app:shapeAppearanceOverlay="@style/HeaderShape">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gestionar_pedidos"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
-    <!-- Lista de Pedidos -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_left_solid_full"
+                app:tint="@color/white"
+                android:background="@android:color/transparent"
+                android:contentDescription="Volver" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestionar pedidos"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPedidos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_pedido"/>
 
-    <!-- Mensaje si no hay pedidos -->
-    <TextView
-        android:id="@+id/tvEmpty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/no_tienes_pedidos_a_n"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/_666666"
-        android:visibility="gone"/>
-
-</FrameLayout>
+</LinearLayout>

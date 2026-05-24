@@ -23,8 +23,8 @@ class PedidosAdapter(private val pedidos: List<Pedido>) :
 
     override fun onBindViewHolder(holder: PedidoViewHolder, position: Int) {
         val pedido = pedidos[position]
-        holder.tvUsuario.text = "${pedido.usuario} - Ver pedido(s)"
-        holder.tvEstado.text = pedido.estado
+        holder.tvUsuario.text = pedido.usuario
+        holder.tvEstado.text = "Ver pedido(s)"
     }
 
     override fun getItemCount() = pedidos.size

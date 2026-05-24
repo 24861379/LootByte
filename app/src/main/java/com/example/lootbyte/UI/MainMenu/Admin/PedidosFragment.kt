@@ -14,11 +14,11 @@ class PedidosFragment : Fragment() {
     private var _binding: FragmentPedidosBinding? = null
     private val binding get() = _binding!!
 
-//    override fun onResume() {
-//        super.onResume()
-//        (activity as? AdminActivity)
-//            ?.actualizarHeader(R.layout.header_simple)
-//    }
+    override fun onResume() {
+        super.onResume()
+        (activity as? AdminActivity)
+            ?.actualizarHeader(R.layout.header_simple)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +37,14 @@ class PedidosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
 
         // Datos de ejemplo para Admin
         val listaPedidos = listOf(
-            Pedido(1, "Usuario Demo", "Ver pedido(s)", 3),
+            Pedido(1, "Felipe", "Ver pedido(s)", 3),
             Pedido(2, "Usuario Demo", "Ver pedido(s)", 1),
             Pedido(3, "Usuario Demo", "Ver pedido(s)", 5),
             Pedido(4, "Usuario Demo", "Ver pedido(s)", 2),
