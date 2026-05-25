@@ -4,68 +4,124 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.lootbyte.MainActivity
-import com.example.lootbyte.R
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.lootbyte.Adapter.ProductoClienteAdapter
+import com.example.lootbyte.Model.DetalleCarrito
+import com.example.lootbyte.Model.Producto
+import com.example.lootbyte.Repository.CarritoRepository
+import com.example.lootbyte.Repository.ProductoRepository
 import com.example.lootbyte.databinding.FragmentHomeBinding
-import com.google.android.material.card.MaterialCardView
-import com.google.android.material.tabs.TabLayout
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var adapter: ProductoClienteAdapter
+
+    private val productoRepository = ProductoRepository()
+
+    private val carritoRepository = CarritoRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Configurar Tabs
-        val tabLayout = requireActivity().findViewById<TabLayout>(R.id.tab_categorias)
-        tabLayout?.let {
-            if (it.tabCount == 0) {
-                it.addTab(it.newTab().setText("Todo"))
-                it.addTab(it.newTab().setText("Mouse"))
-                it.addTab(it.newTab().setText("Teclados"))
-                it.addTab(it.newTab().setText("Pantallas"))
-                it.addTab(it.newTab().setText("Audífonos"))
-            }
+        configurarRecycler()
+
+        obtenerProductos()
+    }
+
+    private fun configurarRecycler() {
+
+        adapter = ProductoClienteAdapter(
+            emptyList()
+        ) { producto ->
+
+            agregarProductoAlCarrito(producto)
+
         }
 
-        // Configurar clic en producto para navegar a ProductoFragment
-        binding.cardProducto1.setOnClickListener {
-            (activity as? MainActivity)?.let { mainActivity ->
-                // Usamos la función cargarFragment de MainActivity para cambiar al producto
-                mainActivity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ProductoFragment())
-                    .addToBackStack(null)
-                    .commit()
-                
-                // Actualizar el header para el producto
-                actualizarHeaderProducto(mainActivity)
+        binding.recyclerProductos.layoutManager =
+            GridLayoutManager(requireContext(), 2)
+
+        binding.recyclerProductos.adapter = adapter
+    }
+
+    private fun obtenerProductos() {
+
+        viewLifecycleOwner.lifecycleScope.launch {
+
+            try {
+
+                val productos =
+                    productoRepository.obtenerProductos()
+
+                adapter.actualizarLista(productos)
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Error al cargar productos",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
-    private fun actualizarHeaderProducto(mainActivity: MainActivity) {
-        val headerContainer = mainActivity.findViewById<ViewGroup>(R.id.header_container)
-        headerContainer?.removeAllViews()
-        mainActivity.layoutInflater.inflate(R.layout.header_simple, headerContainer, true)
-        
-        // Configurar botón volver del header simple
-        val btnBack = headerContainer?.findViewById<ImageView>(R.id.btn_back)
-        btnBack?.setOnClickListener {
-            mainActivity.supportFragmentManager.popBackStack()
-            // Al volver, el BottomNav debería sincronizarse si es necesario, 
-            // pero como MainActivity maneja el estado, aquí solo volvemos.
+    private fun agregarProductoAlCarrito(
+        producto: Producto
+    ) {
+
+        viewLifecycleOwner.lifecycleScope.launch {
+
+            try {
+
+                val detalle = DetalleCarrito(
+
+                    id_carrito_FK = "1",
+
+                    id_producto_color_FK =
+                        producto.producto_Color
+                            ?.firstOrNull()
+                            ?.id_producto_color,
+
+                    cantidad = 1
+                )
+
+                carritoRepository.agregarAlCarrito(detalle)
+
+                Toast.makeText(
+                    requireContext(),
+                    "Producto agregado al carrito",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            } catch (e: Exception) {
+
+                e.printStackTrace()
+
+                Toast.makeText(
+                    requireContext(),
+                    e.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 

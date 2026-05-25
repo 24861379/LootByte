@@ -6,6 +6,16 @@ import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.query.Columns
 
 class CarritoRepository {
+
+    suspend fun agregarAlCarrito(
+        detalleCarrito: DetalleCarrito
+    ) {
+
+        SupabaseClient.client
+            .from("detalle_carrito")
+            .insert(detalleCarrito)
+
+    }
     suspend fun obtenerDetalleCarrito(idCarrito: Int): List<DetalleCarrito> {
         return SupabaseClient.client
             .from("detalle_carrito")
@@ -22,7 +32,7 @@ class CarritoRepository {
                 )
             ) {
                 filter {
-                    eq("id_carrito", idCarrito)
+                    eq("id_carrito_FK", idCarrito)
                 }
             }
             .decodeList<DetalleCarrito>()
