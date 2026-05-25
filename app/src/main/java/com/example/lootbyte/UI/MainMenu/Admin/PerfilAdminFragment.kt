@@ -11,6 +11,8 @@ import com.example.lootbyte.R
 import android.widget.ImageView
 import com.google.android.material.card.MaterialCardView
 import android.widget.FrameLayout
+import android.content.Intent
+import com.example.lootbyte.MainActivity
 
 class PerfilAdminFragment : Fragment() {
 
@@ -59,7 +61,11 @@ class PerfilAdminFragment : Fragment() {
         // ==================== BOTÓN CERRAR SESIÓN ====================
         view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
 
-            requireActivity().finish()
+            view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
     }
 

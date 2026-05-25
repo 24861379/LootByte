@@ -20,9 +20,13 @@ import com.example.lootbyte.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
+
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var binding: ActivityMainBinding
     var isLoggedIn = false
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,10 +67,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (savedInstanceState == null) {
-            cargarFragment(LoginFragment(), R.layout.header_simple)
-            binding.bottomNav.selectedItemId = R.id.nav_perfil
+            binding.bottomNav.visibility = View.VISIBLE
+            cargarFragment(HomeFragment(), R.layout.header_busqueda)
+            binding.bottomNav.selectedItemId = R.id.nav_inicio
         }
+            true
+
+
+    if (savedInstanceState == null) {
+        binding.bottomNav.visibility = View.VISIBLE
+        cargarFragment(HomeFragment(), R.layout.header_busqueda)
+        binding.bottomNav.selectedItemId = R.id.nav_inicio
     }
+    }
+
 
     fun cargarFragment(fragment: Fragment, headerRes: Int) {
         supportFragmentManager.beginTransaction()
