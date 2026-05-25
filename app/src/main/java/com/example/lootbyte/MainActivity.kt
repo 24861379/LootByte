@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -17,21 +19,23 @@ import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.PerfilFragment
 import com.example.lootbyte.databinding.ActivityMainBinding
+import io.github.jan.supabase.auth.auth
 
 class MainActivity : AppCompatActivity() {
 
 
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var binding: ActivityMainBinding
-    var isLoggedIn = false
-
-
+    lateinit var binding: ActivityMainBinding
+    
+    val isLoggedIn: Boolean
+        get() = SupabaseClient.client.auth.currentUserOrNull() != null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
+        setContentView(R.layout.activity_main)
+        window.statusBarColor= ContextCompat.getColor(this,R.color.A855F7)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -53,7 +57,14 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> cargarFragment(HomeFragment(), R.layout.header_busqueda)
-                R.id.nav_carrito -> cargarFragment(CarritoFragment(), R.layout.header_simple)
+                R.id.nav_carrito -> {
+                    if (isLoggedIn) {
+                        cargarFragment(CarritoFragment(), R.layout.header_simple)
+                    } else {
+                        cargarFragment(LoginFragment(), R.layout.header_simple)
+                        Toast.makeText(this, "Inicia sesión para acceder al carrito", Toast.LENGTH_SHORT).show()
+                    }
+                }
                 R.id.nav_ofertas -> cargarFragment(OfertasFragment(), R.layout.header_busqueda)
                 R.id.nav_perfil -> {
                     if (isLoggedIn) {

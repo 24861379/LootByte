@@ -143,4 +143,5 @@
     <string name="categoria_del_producto">Categoria del producto</string>
     <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
     <string name="ingrese_su_celular">Ingrese su celular</string>
+    <string name="volver">Volver</string>
 </resources>

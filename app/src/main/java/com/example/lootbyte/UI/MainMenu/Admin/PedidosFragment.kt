@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.lootbyte.Adapter.PedidosAdapter
 import com.example.lootbyte.R
 import com.example.lootbyte.databinding.FragmentPedidosBinding
 
@@ -14,11 +15,11 @@ class PedidosFragment : Fragment() {
     private var _binding: FragmentPedidosBinding? = null
     private val binding get() = _binding!!
 
-    override fun onResume() {
-        super.onResume()
-        (activity as? AdminActivity)
-            ?.actualizarHeader(R.layout.header_simple)
-    }
+//    override fun onResume() {
+//        super.onResume()
+//        (activity as? AdminActivity)
+//            ?.actualizarHeader(R.layout.header_simple)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,7 +11,7 @@ class ProductoRepository {
     suspend fun obtenerProductos(): List<Producto>{
         return SupabaseClient.client
             .from("producto")
-            .select(Columns.raw("*, producto_color(stock, precio)"))
+            .select(Columns.raw("*, producto_color(id_producto_color, stock, precio)"))
             .decodeList<Producto>()
     }
 

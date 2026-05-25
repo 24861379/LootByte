@@ -10,10 +10,11 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="90dp"
         app:cardBackgroundColor="@color/a020f0"
         app:cardElevation="0dp"
-        app:shapeAppearanceOverlay="@style/HeaderShape">
+        app:shapeAppearanceOverlay="@style/HeaderShape"
+        android:paddingTop="48dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,7 +23,7 @@
             android:orientation="horizontal"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:paddingTop="8dp"
+            android:paddingTop="35dp"
             android:paddingBottom="8dp">
 
             <ImageView
@@ -32,11 +33,11 @@
                 android:src="@drawable/arrow_left_solid_full"
                 app:tint="@color/white"
                 android:background="@android:color/transparent"
-                android:contentDescription="Volver" />
+                android:contentDescription="@string/volver" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gestionar pedidos"
+                android:text="@string/gestionar_pedidos"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"

@@ -39,7 +39,6 @@ class RegisterFragment : Fragment() {
                 
                 // Al registrarse, lo mandamos al Home y sincronizamos el menú
                 (requireActivity() as? MainActivity)?.let { mainActivity ->
-                    mainActivity.isLoggedIn = true // <--- Marcamos sesión como iniciada
                     mainActivity.findViewById<BottomNavigationView>(R.id.bottom_nav)
                         .selectedItemId = R.id.nav_inicio
                 }

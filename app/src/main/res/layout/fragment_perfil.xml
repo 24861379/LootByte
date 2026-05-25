@@ -9,10 +9,20 @@
     <!-- HEADER -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:cardBackgroundColor="@color/a020f0"
-        app:cardElevation="0dp"
-        app:shapeAppearanceOverlay="@style/HeaderShape">
+        android:layout_height="wrap_content"
+        android:background="@color/_8e24aa"
+        android:paddingTop="48dp"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_perfil"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

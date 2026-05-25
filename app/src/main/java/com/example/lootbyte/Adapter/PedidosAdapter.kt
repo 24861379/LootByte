@@ -1,4 +1,4 @@
-package com.example.lootbyte.UI.MainMenu.Admin
+package com.example.lootbyte.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lootbyte.R
+import com.example.lootbyte.UI.MainMenu.Admin.Pedido
 
 class PedidosAdapter(private val pedidos: List<Pedido>) :
     RecyclerView.Adapter<PedidosAdapter.PedidoViewHolder>() {
