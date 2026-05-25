@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/_8e24aa"
+        android:paddingTop="48dp"
         android:padding="16dp"
         android:gravity="center_vertical">
 

@@ -11,9 +11,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.lootbyte.Adapter.ProductoClienteAdapter
 import com.example.lootbyte.Model.DetalleCarrito
 import com.example.lootbyte.Model.Producto
+import com.example.lootbyte.R
 import com.example.lootbyte.Repository.CarritoRepository
 import com.example.lootbyte.Repository.ProductoRepository
+import com.example.lootbyte.SupabaseClient
 import com.example.lootbyte.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayout
+import io.github.jan.supabase.auth.auth
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -40,10 +44,20 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val tabLayout = requireActivity().findViewById<TabLayout>(R.id.tab_categorias)
+        tabLayout?.let {
+            if (it.tabCount == 0) {
+                it.addTab(it.newTab().setText("Todo"))
+                it.addTab(it.newTab().setText("Mouse"))
+                it.addTab(it.newTab().setText("Teclados"))
+                it.addTab(it.newTab().setText("Pantallas"))
+                it.addTab(it.newTab().setText("Audífonos"))
+            }
 
-        configurarRecycler()
+            configurarRecycler()
 
-        obtenerProductos()
+            obtenerProductos()
+        }
     }
 
     private fun configurarRecycler() {
@@ -84,23 +98,23 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun agregarProductoAlCarrito(
-        producto: Producto
-    ) {
-
+    private fun agregarProductoAlCarrito(producto: Producto) {
         viewLifecycleOwner.lifecycleScope.launch {
-
             try {
+                // 1. Verificar si hay usuario autenticado
+                val idUsuario = SupabaseClient.client.auth.currentUserOrNull()?.id
+                if (idUsuario == null) {
+                    Toast.makeText(requireContext(), "Inicia sesión para agregar productos al carrito", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }
 
+                // 2. Obtener o crear el carrito real para este usuario
+                val carrito = carritoRepository.obtenerOCrearCarrito(idUsuario)
+
+                // 3. Preparar el detalle con el ID del carrito correcto (UUID)
                 val detalle = DetalleCarrito(
-
-                    id_carrito_FK = "1",
-
-                    id_producto_color_FK =
-                        producto.producto_Color
-                            ?.firstOrNull()
-                            ?.id_producto_color,
-
+                    id_carrito_FK = carrito.id_carrito,
+                    id_producto_color_Fk = producto.producto_Color?.firstOrNull()?.id_producto_color,
                     cantidad = 1
                 )
 

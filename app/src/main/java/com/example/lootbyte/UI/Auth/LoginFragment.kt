@@ -43,7 +43,6 @@ class LoginFragment : Fragment() {
 
             // Redirigir al Home y actualizar el BottomNav de MainActivity
             (requireActivity() as? MainActivity)?.let { mainActivity ->
-                mainActivity.isLoggedIn = true // <--- Marcamos sesión como iniciada
                 mainActivity.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav)
                     .selectedItemId = R.id.nav_inicio
             }

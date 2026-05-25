@@ -1,5 +1,6 @@
 package com.example.lootbyte.Repository
 
+import com.example.lootbyte.Model.Carrito
 import com.example.lootbyte.Model.DetalleCarrito
 import com.example.lootbyte.SupabaseClient
 import io.github.jan.supabase.postgrest.from
@@ -7,16 +8,13 @@ import io.github.jan.supabase.postgrest.query.Columns
 
 class CarritoRepository {
 
-    suspend fun agregarAlCarrito(
-        detalleCarrito: DetalleCarrito
-    ) {
-
+    suspend fun agregarAlCarrito(detalleCarrito: DetalleCarrito) {
         SupabaseClient.client
             .from("detalle_carrito")
             .insert(detalleCarrito)
-
     }
-    suspend fun obtenerDetalleCarrito(idCarrito: Int): List<DetalleCarrito> {
+
+    suspend fun obtenerDetalleCarrito(idCarrito: String): List<DetalleCarrito> {
         return SupabaseClient.client
             .from("detalle_carrito")
             .select(
@@ -38,11 +36,32 @@ class CarritoRepository {
             .decodeList<DetalleCarrito>()
     }
 
-    suspend fun actualizarCantidad(
-        idDetalleCarrito: String,
-        cantidad: Int
-    ) {
+    suspend fun obtenerOCrearCarrito(idUsuario: String): Carrito {
+        // Buscar carrito existente
+        val carritoExistente = SupabaseClient.client
+            .from("carrito")
+            .select {
+                filter {
+                    eq("id_usuario_FK", idUsuario)
+                }
+            }
+            .decodeSingleOrNull<Carrito>()
 
+        if (carritoExistente != null) {
+            return carritoExistente
+        }
+
+        // Crear carrito nuevo
+        val nuevoCarrito = Carrito(id_usuario_FK = idUsuario)
+        return SupabaseClient.client
+            .from("carrito")
+            .insert(nuevoCarrito) {
+                select()
+            }
+            .decodeSingle<Carrito>()
+    }
+
+    suspend fun actualizarCantidad(idDetalleCarrito: String, cantidad: Int) {
         SupabaseClient.client
             .from("detalle_carrito")
             .update({
@@ -55,7 +74,6 @@ class CarritoRepository {
     }
 
     suspend fun eliminarDetalleCarrito(idDetalleCarrito: String) {
-
         SupabaseClient.client
             .from("detalle_carrito")
             .delete {
