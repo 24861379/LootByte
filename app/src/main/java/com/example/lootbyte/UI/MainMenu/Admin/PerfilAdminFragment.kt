@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
 import android.widget.ImageView
+import com.google.android.material.card.MaterialCardView
+import android.widget.FrameLayout
 
 class PerfilAdminFragment : Fragment() {
 
@@ -44,6 +46,16 @@ class PerfilAdminFragment : Fragment() {
         view.findViewById<TextView>(R.id.tvTasaConversion)?.text = "12.4%"
         view.findViewById<TextView>(R.id.tvProductosBajoStock)?.text = "15"
 
+        val cardPedidos = view.findViewById<MaterialCardView>(R.id.cardPedidosHoy)
+
+        cardPedidos.setOnClickListener {
+            val header = requireActivity().findViewById<FrameLayout>(R.id.header_container_admin)
+            header.removeAllViews()
+            header.visibility = View.GONE
+
+            (activity as? AdminActivity)?.cargarFragment(PedidosFragment(), true)
+        }
+
         // ==================== BOTÓN CERRAR SESIÓN ====================
         view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
 
@@ -51,9 +63,8 @@ class PerfilAdminFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        (activity as? AdminActivity)
-            ?.actualizarHeader(R.layout.header_simple)
+    //override fun onResume() {
+    //    super.onResume()
+    //    (activity as? AdminActivity)
+    //        ?.actualizarHeader(R.layout.header_simple)
     }
-}

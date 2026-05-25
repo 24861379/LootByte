@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:cardBackgroundColor="@color/morado_nav">
+    app:cardBackgroundColor="@color/white">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -53,6 +53,7 @@
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
         android:clipToPadding="false"
-        tools:listitem="@layout/item_pedido"/>
+        tools:listitem="@layout/item_pedido"
+        android:background="@color/white"/>
 
 </LinearLayout>

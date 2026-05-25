@@ -10,18 +10,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.lootbyte.UI.Auth.LoginFragment
+import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.UI.MainMenu.Cliente.CarritoFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.PerfilFragment
-import com.example.lootbyte.UI.Auth.LoginFragment
-import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var binding: ActivityMainBinding
-    var isLoggedIn = false // Variable para controlar el estado de la sesión
+    var isLoggedIn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = binding.main
 
-        // BOTÓN DE PRUEBAS PARA ADMIN
+        binding.btnAdminTest.visibility = View.GONE
+
         binding.btnAdminTest.setOnClickListener {
             val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
         }
 
-        // Configurar navegación
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> cargarFragment(HomeFragment(), R.layout.header_busqueda)
@@ -62,8 +63,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (savedInstanceState == null) {
-            cargarFragment(HomeFragment(), R.layout.header_busqueda)
-            binding.bottomNav.selectedItemId = R.id.nav_inicio
+            cargarFragment(LoginFragment(), R.layout.header_simple)
+            binding.bottomNav.selectedItemId = R.id.nav_perfil
         }
     }
 

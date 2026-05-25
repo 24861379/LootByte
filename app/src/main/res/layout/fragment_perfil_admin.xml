@@ -193,6 +193,7 @@
 
             <!-- CARD 3 -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPedidosHoy"
                 android:layout_width="0dp"
                 android:layout_height="110dp"
                 android:layout_columnWeight="1"
@@ -204,24 +205,25 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:gravity="center">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/pedidos_de_hoy"
+                        android:text="Pedidos de hoy"
                         android:textSize="12sp"
-                        android:textColor="#666666"/>
+                        android:textColor="@color/_666666" />
 
                     <TextView
                         android:id="@+id/tvPedidosHoy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/_87"
+                        android:text="87"
                         android:textSize="22sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
             <!-- CARD 4 -->
