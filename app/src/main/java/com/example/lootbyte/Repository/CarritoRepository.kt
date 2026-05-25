@@ -5,13 +5,21 @@ import com.example.lootbyte.Model.DetalleCarrito
 import com.example.lootbyte.SupabaseClient
 import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.query.Columns
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 class CarritoRepository {
 
     suspend fun agregarAlCarrito(detalleCarrito: DetalleCarrito) {
+        val datos = buildJsonObject {
+            put("id_carrito_FK", detalleCarrito.id_carrito_FK)
+            put("id_producto_color_Fk", detalleCarrito.id_producto_color_Fk)
+            put("cantidad", detalleCarrito.cantidad)
+        }
+        
         SupabaseClient.client
             .from("detalle_carrito")
-            .insert(detalleCarrito)
+            .insert(datos)
     }
 
     suspend fun obtenerDetalleCarrito(idCarrito: String): List<DetalleCarrito> {
@@ -51,11 +59,14 @@ class CarritoRepository {
             return carritoExistente
         }
 
-        // Crear carrito nuevo
-        val nuevoCarrito = Carrito(id_usuario_FK = idUsuario)
+        // Crear carrito nuevo usando buildJsonObject para evitar errores de serialización
+        val datos = buildJsonObject {
+            put("id_usuario_FK", idUsuario)
+        }
+
         return SupabaseClient.client
             .from("carrito")
-            .insert(nuevoCarrito) {
+            .insert(datos) {
                 select()
             }
             .decodeSingle<Carrito>()

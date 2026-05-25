@@ -35,31 +35,32 @@ class AdminActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
         val header = findViewById<FrameLayout>(R.id.header_container_admin)
-        header.removeAllViews()
-        header.visibility = View.GONE
-
-        cargarFragment(PerfilAdminFragment())
-        bottomNav.selectedItemId = R.id.nav_perfil
-
-
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_producto -> cargarFragment(ProductosFragment())
-                R.id.nav_usuarios -> cargarFragment(UsuariosFragment())
+                R.id.nav_producto -> {
+                    actualizarHeader(R.layout.header_busqueda_admin)
+                    cargarFragment(ProductosFragment())
+                }
+                R.id.nav_usuarios -> {
+                    actualizarHeader(R.layout.header_busqueda_admin)
+                    cargarFragment(UsuariosFragment())
+                }
                 R.id.nav_pedidos -> {
-                    findViewById<FrameLayout>(R.id.header_container_admin).removeAllViews()
+                    header.removeAllViews()
+                    header.visibility = View.GONE
                     cargarFragment(PedidosFragment())
                 }
-                R.id.nav_perfil -> {
-                    val header = findViewById<FrameLayout>(R.id.header_container_admin)
+                R.id.nav_perfil_admin -> {
                     header.removeAllViews()
                     header.visibility = View.GONE
                     cargarFragment(PerfilAdminFragment())
                 }
-
             }
             true
+        }
+        if (savedInstanceState == null) {
+            bottomNav.selectedItemId = R.id.nav_perfil
         }
     }
 
@@ -76,6 +77,7 @@ class AdminActivity : AppCompatActivity() {
 
     fun actualizarHeader(headerRes: Int) {
         val headerContainer = findViewById<FrameLayout>(R.id.header_container_admin)
+        headerContainer.visibility = View.VISIBLE
         headerContainer.removeAllViews()
         layoutInflater.inflate(headerRes, headerContainer, true)
 

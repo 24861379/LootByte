@@ -82,16 +82,7 @@ class MainActivity : AppCompatActivity() {
             cargarFragment(HomeFragment(), R.layout.header_busqueda)
             binding.bottomNav.selectedItemId = R.id.nav_inicio
         }
-            true
-
-
-    if (savedInstanceState == null) {
-        binding.bottomNav.visibility = View.VISIBLE
-        cargarFragment(HomeFragment(), R.layout.header_busqueda)
-        binding.bottomNav.selectedItemId = R.id.nav_inicio
     }
-    }
-
 
     fun cargarFragment(fragment: Fragment, headerRes: Int) {
         supportFragmentManager.beginTransaction()

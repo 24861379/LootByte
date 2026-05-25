@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
 import android.widget.ImageView
 import com.google.android.material.card.MaterialCardView
-import android.widget.FrameLayout
 import android.content.Intent
 import com.example.lootbyte.MainActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PerfilAdminFragment : Fragment() {
 
@@ -50,26 +50,17 @@ class PerfilAdminFragment : Fragment() {
         val cardPedidos = view.findViewById<MaterialCardView>(R.id.cardPedidosHoy)
 
         cardPedidos.setOnClickListener {
-            val header = requireActivity().findViewById<FrameLayout>(R.id.header_container_admin)
-            header.removeAllViews()
-            header.visibility = View.GONE
 
-            (activity as? AdminActivity)?.cargarFragment(PedidosFragment(), true)
+            val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
+            bottomNav.selectedItemId = R.id.nav_pedidos
         }
 
         // ==================== BOTÓN CERRAR SESIÓN ====================
         view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
-
-            view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
-                val intent = Intent(requireContext(), MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-            }
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
-
-    //override fun onResume() {
-    //    super.onResume()
-    //    (activity as? AdminActivity)
-    //        ?.actualizarHeader(R.layout.header_simple)
-    }
+}

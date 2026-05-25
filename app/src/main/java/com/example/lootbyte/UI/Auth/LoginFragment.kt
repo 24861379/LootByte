@@ -43,10 +43,16 @@ class LoginFragment : Fragment() {
 
             Toast.makeText(requireContext(), "Iniciando sesión...", Toast.LENGTH_SHORT).show()
 
-            // Redirigir al Home y actualizar el BottomNav de MainActivity
-            (requireActivity() as? MainActivity)?.let { mainActivity ->
-                mainActivity.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav)
-                    .selectedItemId = R.id.nav_inicio
+            if (email == "admin@gmail.com" && password == "123456") {
+                val intent = Intent(requireContext(), AdminActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            } else {
+                // Redirigir al Home y actualizar el BottomNav de MainActivity
+                (requireActivity() as? MainActivity)?.let { mainActivity ->
+                    mainActivity.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav)
+                        .selectedItemId = R.id.nav_inicio
+                }
             }
         }
 
