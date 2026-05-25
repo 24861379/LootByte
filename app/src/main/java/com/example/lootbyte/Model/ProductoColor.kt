@@ -9,7 +9,6 @@ data class ProductoColor(
     val precio: Double = 0.0,
     val id_producto_FK: String? = null,
     val id_color_FK: String? = null,
-//    val id_oferta_FK: String? = null
 
     val producto: Producto? = null,
     val color: Color? = null

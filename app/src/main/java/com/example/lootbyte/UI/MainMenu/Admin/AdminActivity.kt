@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
 import com.example.lootbyte.UI.MainMenu.Admin.ReportesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.View
+
 
 class AdminActivity : AppCompatActivity() {
 
@@ -32,17 +34,33 @@ class AdminActivity : AppCompatActivity() {
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
-        cargarFragment(ProductosFragment())
-        bottomNav.selectedItemId = R.id.nav_producto
+        val header = findViewById<FrameLayout>(R.id.header_container_admin)
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_producto -> cargarFragment(ProductosFragment())
-                R.id.nav_usuarios -> cargarFragment(UsuariosFragment())
-                R.id.nav_pedidos -> cargarFragment(PedidosFragment())
-                R.id.nav_perfil -> cargarFragment(PerfilAdminFragment())
+                R.id.nav_producto -> {
+                    actualizarHeader(R.layout.header_busqueda_admin)
+                    cargarFragment(ProductosFragment())
+                }
+                R.id.nav_usuarios -> {
+                    actualizarHeader(R.layout.header_busqueda_admin)
+                    cargarFragment(UsuariosFragment())
+                }
+                R.id.nav_pedidos -> {
+                    header.removeAllViews()
+                    header.visibility = View.GONE
+                    cargarFragment(PedidosFragment())
+                }
+                R.id.nav_perfil_admin -> {
+                    header.removeAllViews()
+                    header.visibility = View.GONE
+                    cargarFragment(PerfilAdminFragment())
+                }
             }
             true
+        }
+        if (savedInstanceState == null) {
+            bottomNav.selectedItemId = R.id.nav_perfil
         }
     }
 
@@ -59,6 +77,7 @@ class AdminActivity : AppCompatActivity() {
 
     fun actualizarHeader(headerRes: Int) {
         val headerContainer = findViewById<FrameLayout>(R.id.header_container_admin)
+        headerContainer.visibility = View.VISIBLE
         headerContainer.removeAllViews()
         layoutInflater.inflate(headerRes, headerContainer, true)
 

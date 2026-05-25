@@ -11,6 +11,8 @@ import com.example.lootbyte.databinding.FragmentLoginBinding
 import com.example.lootbyte.R
 import com.example.lootbyte.MainActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.content.Intent
+import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 
 class LoginFragment : Fragment() {
 
@@ -41,11 +43,16 @@ class LoginFragment : Fragment() {
 
             Toast.makeText(requireContext(), "Iniciando sesión...", Toast.LENGTH_SHORT).show()
 
-            // Redirigir al Home y actualizar el BottomNav de MainActivity
-            (requireActivity() as? MainActivity)?.let { mainActivity ->
-                mainActivity.isLoggedIn = true // <--- Marcamos sesión como iniciada
-                mainActivity.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav)
-                    .selectedItemId = R.id.nav_inicio
+            if (email == "admin@gmail.com" && password == "123456") {
+                val intent = Intent(requireContext(), AdminActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            } else {
+                // Redirigir al Home y actualizar el BottomNav de MainActivity
+                (requireActivity() as? MainActivity)?.let { mainActivity ->
+                    mainActivity.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav)
+                        .selectedItemId = R.id.nav_inicio
+                }
             }
         }
 

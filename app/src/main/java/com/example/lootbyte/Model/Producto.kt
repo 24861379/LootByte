@@ -11,7 +11,7 @@ data class Producto(
     val descripcion: String = "",
     val foto_producto: String = "",
     val id_categoria_FK: String? = null,
-    @Transient
+//    @Transient
     @SerialName("producto_color")
     val producto_Color: List<ProductoColor>? = null
 ) {

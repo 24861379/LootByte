@@ -1,4 +1,4 @@
-package com.example.lootbyte.UI.MainMenu.Admin
+package com.example.lootbyte.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lootbyte.R
+import com.example.lootbyte.UI.MainMenu.Admin.Pedido
 
 class PedidosAdapter(private val pedidos: List<Pedido>) :
     RecyclerView.Adapter<PedidosAdapter.PedidoViewHolder>() {
@@ -23,8 +24,8 @@ class PedidosAdapter(private val pedidos: List<Pedido>) :
 
     override fun onBindViewHolder(holder: PedidoViewHolder, position: Int) {
         val pedido = pedidos[position]
-        holder.tvUsuario.text = "${pedido.usuario} - Ver pedido(s)"
-        holder.tvEstado.text = pedido.estado
+        holder.tvUsuario.text = pedido.usuario
+        holder.tvEstado.text = "Ver pedido(s)"
     }
 
     override fun getItemCount() = pedidos.size
