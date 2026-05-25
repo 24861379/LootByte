@@ -9,6 +9,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
 import android.widget.ImageView
+import com.google.android.material.card.MaterialCardView
+import android.widget.FrameLayout
+import android.content.Intent
+import com.example.lootbyte.MainActivity
 
 class PerfilAdminFragment : Fragment() {
 
@@ -43,16 +47,29 @@ class PerfilAdminFragment : Fragment() {
         view.findViewById<TextView>(R.id.tvTasaConversion)?.text = "12.4%"
         view.findViewById<TextView>(R.id.tvProductosBajoStock)?.text = "15"
 
+        val cardPedidos = view.findViewById<MaterialCardView>(R.id.cardPedidosHoy)
+
+        cardPedidos.setOnClickListener {
+            val header = requireActivity().findViewById<FrameLayout>(R.id.header_container_admin)
+            header.removeAllViews()
+            header.visibility = View.GONE
+
+            (activity as? AdminActivity)?.cargarFragment(PedidosFragment(), true)
+        }
+
         // ==================== BOTÓN CERRAR SESIÓN ====================
         view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
 
-            requireActivity().finish()
+            view.findViewById<Button>(R.id.btnCerrarSesion)?.setOnClickListener {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        (activity as? AdminActivity)
-            ?.actualizarHeader(R.layout.header_simple)
+    //override fun onResume() {
+    //    super.onResume()
+    //    (activity as? AdminActivity)
+    //        ?.actualizarHeader(R.layout.header_simple)
     }
-}

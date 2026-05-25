@@ -12,16 +12,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.lootbyte.UI.Auth.LoginFragment
+import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.UI.MainMenu.Cliente.CarritoFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.HomeFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.OfertasFragment
 import com.example.lootbyte.UI.MainMenu.Cliente.PerfilFragment
-import com.example.lootbyte.UI.Auth.LoginFragment
-import com.example.lootbyte.UI.MainMenu.Admin.AdminActivity
 import com.example.lootbyte.databinding.ActivityMainBinding
 import io.github.jan.supabase.auth.auth
 
 class MainActivity : AppCompatActivity() {
+
+
+
     private lateinit var drawerLayout: DrawerLayout
     lateinit var binding: ActivityMainBinding
     
@@ -44,13 +47,13 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = binding.main
 
-        // BOTÓN DE PRUEBAS PARA ADMIN
+        binding.btnAdminTest.visibility = View.GONE
+
         binding.btnAdminTest.setOnClickListener {
             val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
         }
 
-        // Configurar navegación
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> cargarFragment(HomeFragment(), R.layout.header_busqueda)
@@ -75,10 +78,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (savedInstanceState == null) {
+            binding.bottomNav.visibility = View.VISIBLE
             cargarFragment(HomeFragment(), R.layout.header_busqueda)
             binding.bottomNav.selectedItemId = R.id.nav_inicio
         }
+            true
+
+
+    if (savedInstanceState == null) {
+        binding.bottomNav.visibility = View.VISIBLE
+        cargarFragment(HomeFragment(), R.layout.header_busqueda)
+        binding.bottomNav.selectedItemId = R.id.nav_inicio
     }
+    }
+
 
     fun cargarFragment(fragment: Fragment, headerRes: Int) {
         supportFragmentManager.beginTransaction()

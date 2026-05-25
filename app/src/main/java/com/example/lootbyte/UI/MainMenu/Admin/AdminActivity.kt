@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import com.example.lootbyte.R
 import com.example.lootbyte.UI.MainMenu.Admin.ReportesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.View
+
 
 class AdminActivity : AppCompatActivity() {
 
@@ -32,8 +34,14 @@ class AdminActivity : AppCompatActivity() {
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
-        cargarFragment(ProductosFragment())
-        bottomNav.selectedItemId = R.id.nav_producto
+        val header = findViewById<FrameLayout>(R.id.header_container_admin)
+        header.removeAllViews()
+        header.visibility = View.GONE
+
+        cargarFragment(PerfilAdminFragment())
+        bottomNav.selectedItemId = R.id.nav_perfil
+
+
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -43,7 +51,13 @@ class AdminActivity : AppCompatActivity() {
                     findViewById<FrameLayout>(R.id.header_container_admin).removeAllViews()
                     cargarFragment(PedidosFragment())
                 }
-                R.id.nav_perfil -> cargarFragment(PerfilAdminFragment())
+                R.id.nav_perfil -> {
+                    val header = findViewById<FrameLayout>(R.id.header_container_admin)
+                    header.removeAllViews()
+                    header.visibility = View.GONE
+                    cargarFragment(PerfilAdminFragment())
+                }
+
             }
             true
         }
